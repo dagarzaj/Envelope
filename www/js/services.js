@@ -1,47 +1,121 @@
 angular.module('starter.services', [])
 
-.factory('Chats', function() {
+.factory('Envelopes', function() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
-  var chats = [{
+  var Envelopes = [{
     id: 0,
-    name: 'Ben Sparrow',
-    lastText: 'You on your way?',
-    face: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png'
+    name: 'Utilities',
+    luxuries: false,
+    MaxAmt: 550.00,
+    AmtSpent: 0.00,
+    transactionC: 0,
+    balance: function()
+    {
+        return (this.MaxAmt - this.AmtSpent);
+    },
+    analysisByE:
+    {
+        
+    }
   }, {
     id: 1,
-    name: 'Max Lynx',
-    lastText: 'Hey, it\'s me',
-    face: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460'
+    name: 'Groceries',
+    luxuries: false,
+    MaxAmt: 1000.00,
+    AmtSpent: 0.00,
+    transactionC: 0,
+    balance: function () {
+        return (this.MaxAmt - this.AmtSpent);
+    },
+    analysisByE: function () {
+        //lots of data interpretation
+        if (this.AmtSpent > this.MaxAmt) {
+            console.log("You went over budget in this envelope.");
+            console.log("You spent " + (this.AmtSpent - this.MaxAmt) + " more than you should have.");
+            console.log("Maybe you can reallocate some money to this envelope.");
+        }
+        else {
+            console.log("Great job! You stayed within budget of this envelope.");
+        }
+    }
   }, {
     id: 2,
-    name: 'Adam Bradleyson',
-    lastText: 'I should buy a boat',
-    face: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg'
+    name: 'Entertainment',
+    luxuries: true,
+    MaxAmt: 50.00,
+    AmtSpent: 0.00,
+    transactionC: 0,
+    balance: function () {
+        return (this.MaxAmt - this.AmtSpent);
+    },
+    analysisByE: function () {
+        //lots of data interpretation
+        if (this.AmtSpent > this.MaxAmt) {
+            console.log("You went over budget in this envelope.");
+            console.log("You spent " + (this.AmtSpent - this.MaxAmt) + " more than you should have.");
+            console.log("Maybe you can reallocate some money to this envelope.");
+        }
+        else {
+            console.log("Great job! You stayed within budget of this envelope.");
+        }
+    }
   }, {
     id: 3,
-    name: 'Perry Governor',
-    lastText: 'Look at my mukluks!',
-    face: 'https://pbs.twimg.com/profile_images/598205061232103424/3j5HUXMY.png'
+    name: 'Gas',
+    luxuries: false,
+    MaxAmt: 65.00,
+    AmtSpent: 0.00,
+    transactionC: 0,
+    balance: function () {
+        return (this.MaxAmt - this.AmtSpent);
+    },
+    analysisByE: function () {
+        //lots of data interpretation
+        if (this.AmtSpent > this.MaxAmt) {
+            console.log("You went over budget in this envelope.");
+            console.log("You spent " + (this.AmtSpent - this.MaxAmt) + " more than you should have.");
+            console.log("Maybe you can reallocate some money to this envelope.");
+        }
+        else {
+            console.log("Great job! You stayed within budget of this envelope.");
+        }
+    }
   }, {
     id: 4,
-    name: 'Mike Harrington',
-    lastText: 'This is wicked good ice cream.',
-    face: 'https://pbs.twimg.com/profile_images/578237281384841216/R3ae1n61.png'
+    name: 'Blow Money',
+    luxuries: true,
+    MaxAmt: 500.00,
+    AmtSpent: 0.00,
+    transactionC: 0,
+    balance: function () {
+        return (this.MaxAmt - this.AmtSpent);
+    },
+    analysisByE: function () {
+        //lots of data interpretation
+        if (this.AmtSpent > this.MaxAmt) {
+            console.log("You went over budget in this envelope.");
+            console.log("You spent " + (this.AmtSpent - this.MaxAmt) + " more than you should have.");
+            console.log("Maybe you can reallocate some money to this envelope.");
+        }
+        else {
+            console.log("Great job! You stayed within budget of this envelope.");
+        }
+    }
   }];
 
   return {
     all: function() {
-      return chats;
+      return Envelopes;
     },
-    remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
+    remove: function(Envelopes) {
+      Envelopes.splice(Envelopes.indexOf(Envelopes), 1);
     },
     get: function(chatId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
+      for (var i = 0; i < Envelopes.length; i++) {
+        if (Envelopes[i].id === parseInt(chatId)) {
+          return Envelopes[i];
         }
       }
       return null;

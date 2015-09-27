@@ -1,28 +1,39 @@
 <ion-view view-title="Dashboard">
   <ion-content class="padding">
+
     <div class="list card">
       <div class="item item-divider">Recent Updates</div>
-      <div class="item item-body">
-        <div>
-          There is a fire in <b>sector 3</b>
+      <div class="item item-body">  
+        <div ng-if="(Envelope.AmtSpent)>(Envelope.MaxAmt)">
+          You have <b>overspent</b> in the (Envelope.name) envelope.
         </div>
+        <div ng-if="Envelope.AmtSpent<=Envelope.MaxAmt">
+            You have successfully stayed under budget! Congratulations!
+        </div> 
+        
       </div>
     </div>
+
     <div class="list card">
-      <div class="item item-divider">Health</div>
+      <div class="item item-divider">Analysis</div>
       <div class="item item-body">
         <div>
-          You ate an apple today!
+          You have spent your money well thus far.
         </div>
+
       </div>
     </div>
+
     <div class="list card">
-      <div class="item item-divider">Upcoming</div>
+      <div class="item item-divider">Remember</div>
       <div class="item item-body">
         <div>
-          You have <b>29</b> meetings on your calendar tomorrow.
+          You should spend <b>less</b> on luxury items until you are more financially stable.
+            It would also help to reallocate money depending on your needs.
         </div>
+
       </div>
     </div>
+
   </ion-content>
 </ion-view>

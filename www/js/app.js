@@ -48,7 +48,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         controller: 'DashCtrl'
       }
     }
-  })
+  })//DashCtr1 opens ___________window
 
   .state('tab.chats', {
       url: '/chats',
@@ -58,7 +58,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           controller: 'ChatsCtrl'
         }
       }
-    })
+    })// chatsCtr1 opens ___________window
     .state('tab.chat-detail', {
       url: '/chats/:chatId',
       views: {
@@ -76,7 +76,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         templateUrl: 'templates/tab-account.html',
         controller: 'AccountCtrl'
       }
-    }
+    }//AccountCtr1 opens ___________window
   });
 
   // if none of the above states are matched, use this as the fallback
